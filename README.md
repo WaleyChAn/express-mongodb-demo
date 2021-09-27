@@ -46,7 +46,7 @@ app.get('/', function (req, res) {
 npm install mongoose --save
 ```
 
-### 引入并链接本地 mongodb 数据库
+#### 引入并链接本地 mongodb 数据库
 
 ```bash
 const mongoose = require('mongoose')
@@ -62,7 +62,7 @@ express 你数据库的名称，可以自己自定义与项目相关联的名字
 
 注意，connect 的几个属性要添加上，不然会报错，可能版本不一致需要的属性也不一样，根据 node 的提示把属性加上就好。
 
-### 新建数据模型，用户数据存储
+#### 新建数据模型，用户数据存储
 
 ```bash
 const Product = mongoose.model('Product', new mongoose.Schema({
@@ -72,7 +72,7 @@ const Product = mongoose.model('Product', new mongoose.Schema({
 
 schema 里的属性，就是你要存储的数据的属性，需要定义好字段类型，具体的类型可以参照 [mongoose](https://mongoosejs.com/docs/schematypes.html) 的 api
 
-### 从数据库中获取数据
+#### 从数据库中获取数据
 
 ```bash
 app.get('/products', async function (req, res) {
@@ -85,7 +85,7 @@ app.get('/products', async function (req, res) {
 
 ## 增删改查
 
-### 增
+#### 增
 
 ```bash
 app.post('/products', async function (req, res) {
@@ -95,7 +95,7 @@ app.post('/products', async function (req, res) {
 })
 ```
 
-### 删
+#### 删
 
 ```bash
 app.delete('/products/:id', async function (req, res) {
@@ -113,7 +113,7 @@ app.delete('/products/:id', async function (req, res) {
 Product.findByIdAndDelete(req.params.id)
 ```
 
-### 改
+#### 改
 
 ```bash
 app.put('/products/:id', async function (req, res) {
@@ -131,7 +131,7 @@ app.put('/products/:id', async function (req, res) {
 Product.findByIdAndUpdate(req.params.id, req.body)
 ```
 
-### 查
+#### 查
 
 ```bash
 app.get('/products/:id', async function (req, res) {
